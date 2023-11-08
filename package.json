@@ -1,6 +1,6 @@
 {
-  "name": "@edx/frontend-lib-content-components",
-  "version": "1.0.0-semantically-released",
+  "name": "@johnvente/frontend-lib-content-components",
+  "version": "1.0.1",
   "description": "A library of high-level components for content handling.",
   "main": "dist/index.js",
   "publishConfig": {
@@ -26,17 +26,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edx/frontend-lib-content-components.git"
+    "url": "git+https://github.com/eduNext/frontend-lib-content-components.git"
   },
   "author": "edX",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/edx/frontend-lib-content-components/issues"
+    "url": "https://github.com/ededuNextx/frontend-lib-content-components/issues"
   },
   "browserslist": [
     "extends @edx/browserslist-config"
   ],
-  "homepage": "https://github.com/edx/frontend-lib-content-components#readme",
+  "homepage": "https://github.com/eduNext/frontend-lib-content-components#readme",
   "devDependencies": {
     "@edx/browserslist-config": "^1.1.1",
     "@edx/frontend-build": "13.0.1",
@@ -91,7 +91,7 @@
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.4.1",
     "reselect": "^4.1.5",
-    "tinymce": "^5.10.4",
+    "tinymce": "^5.10.7",
     "video-react": "^0.15.0",
     "video.js": "^7.18.1",
     "xmlchecker": "^0.1.0"
