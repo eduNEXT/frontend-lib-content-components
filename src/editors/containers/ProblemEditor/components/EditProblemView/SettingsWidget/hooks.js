@@ -166,12 +166,18 @@ export const scoringCardHooks = (scoring, updateSettings, defaultValue) => {
     updateSettings({ scoring: { ...scoring, weight } });
   };
 
+  const handleGradingStrategyChange = (event) => {
+    const { value } = event.target;
+    updateSettings({ scoring: { ...scoring, gradingStrategy: value } });
+  };
+
   return {
     attemptDisplayValue,
     handleUnlimitedChange,
     handleMaxAttemptChange,
     handleOnChange,
     handleWeightChange,
+    handleGradingStrategyChange,
   };
 };
 

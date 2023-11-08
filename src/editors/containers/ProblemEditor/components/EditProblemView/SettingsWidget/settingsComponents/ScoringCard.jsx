@@ -24,11 +24,12 @@ export const ScoringCard = ({
     handleUnlimitedChange,
     handleMaxAttemptChange,
     handleWeightChange,
+    handleGradingStrategyChange,
     handleOnChange,
     attemptDisplayValue,
   } = scoringCardHooks(scoring, updateSettings, defaultValue);
 
-  const getScoringSummary = (weight, attempts, unlimited) => {
+  const getScoringSummary = (weight, attempts, unlimited, gradingStrategy) => {
     let summary = intl.formatMessage(messages.weightSummary, { weight });
     summary += ` ${String.fromCharCode(183)} `;
     summary += unlimited
@@ -46,6 +47,17 @@ export const ScoringCard = ({
       <div className="mb-4">
         <FormattedMessage {...messages.scoringSettingsLabel} />
       </div>
+      <Form.Group>
+        <Form.Control
+          as="select"
+          value={scoring.gradingStrategy}
+          onChange={handleGradingStrategyChange}
+          floatingLabel={intl.formatMessage(messages.scoringGradingStrategyInputLabel)}
+        />
+        <Form.Control.Feedback>
+          <FormattedMessage {...messages.gradingStrategyHint} />
+        </Form.Control.Feedback>
+      </Form.Group>
       <Form.Group>
         <Form.Control
           type="number"
