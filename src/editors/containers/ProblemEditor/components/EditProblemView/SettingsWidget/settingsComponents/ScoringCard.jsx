@@ -8,6 +8,7 @@ import { selectors } from '../../../../../../data/redux';
 import SettingsOption from '../SettingsOption';
 import messages from '../messages';
 import { scoringCardHooks } from '../hooks';
+import { GradingStrategy, GradingStrategyKeys } from '../../../../../../data/constants/problem';
 
 export const ScoringCard = ({
   scoring,
@@ -35,13 +36,15 @@ export const ScoringCard = ({
     summary += unlimited
       ? intl.formatMessage(messages.unlimitedAttemptsSummary)
       : intl.formatMessage(messages.attemptsSummary, { attempts: attempts || defaultValue });
+    summary += ` ${String.fromCharCode(183)} `;
+    summary += intl.formatMessage(messages.gradingStrategySummary, { gradingStrategy: intl.formatMessage(GradingStrategy[gradingStrategy]) });
     return summary;
   };
 
   return (
     <SettingsOption
       title={intl.formatMessage(messages.scoringSettingsTitle)}
-      summary={getScoringSummary(scoring.weight, scoring.attempts.number, scoring.attempts.unlimited)}
+      summary={getScoringSummary(scoring.weight, scoring.attempts.number, scoring.attempts.unlimited, scoring.gradingStrategy)}
       className="scoringCard"
     >
       <div className="mb-4">
@@ -53,7 +56,22 @@ export const ScoringCard = ({
           value={scoring.gradingStrategy}
           onChange={handleGradingStrategyChange}
           floatingLabel={intl.formatMessage(messages.scoringGradingStrategyInputLabel)}
-        />
+        >
+          {Object.values(GradingStrategyKeys).map((gradingStrategy) => {
+            let optionDisplayName = GradingStrategy[gradingStrategy];
+            if (gradingStrategy === defaultValue) {
+              optionDisplayName = { ...optionDisplayName, defaultMessage: `${optionDisplayName.defaultMessage} (Default)` };
+            }
+            return (
+              <option
+                key={gradingStrategy}
+                value={gradingStrategy}
+              >
+                {intl.formatMessage(optionDisplayName)}
+              </option>
+            );
+          })}
+        </Form.Control>
         <Form.Control.Feedback>
           <FormattedMessage {...messages.gradingStrategyHint} />
         </Form.Control.Feedback>

@@ -87,6 +87,11 @@ const messages = defineMessages({
     defaultMessage: 'Grading Strategy',
     description: 'Grading strategy input label',
   },
+  gradingStrategySummary: {
+    id: 'authoring.problemeditor.settings.scoring.gradingStrategy',
+    defaultMessage: '{gradingStrategy}',
+    description: 'Summary text for scoring grading strategy',
+  },
   unlimitedAttemptsSummary: {
     id: 'authoring.problemeditor.settings.scoring.unlimited',
     defaultMessage: 'Unlimited attempts',
