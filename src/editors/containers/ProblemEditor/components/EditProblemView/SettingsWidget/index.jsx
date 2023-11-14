@@ -169,8 +169,9 @@ SettingsWidget.propTypes = {
   defaultSettings: PropTypes.shape({
     maxAttempts: PropTypes.number,
     showanswer: PropTypes.string,
-    showResetButton: PropTypes.bool,
     rerandomize: PropTypes.string,
+    showReseButton: PropTypes.bool,
+    gradingStrategy: PropTypes.string,
   }).isRequired,
   // eslint-disable-next-line
   settings: PropTypes.any.isRequired,
