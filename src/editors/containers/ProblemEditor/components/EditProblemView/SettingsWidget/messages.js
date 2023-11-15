@@ -82,6 +82,16 @@ const messages = defineMessages({
     defaultMessage: 'Points',
     description: 'Scoring weight input label',
   },
+  scoringGradingStrategyInputLabel: {
+    id: 'authoring.problemeditor.settings.scoring.gradingStrategy.inputLabel',
+    defaultMessage: 'Grading Strategy',
+    description: 'Grading strategy input label',
+  },
+  gradingStrategySummary: {
+    id: 'authoring.problemeditor.settings.scoring.gradingStrategy',
+    defaultMessage: '{gradingStrategy}',
+    description: 'Summary text for scoring grading strategy',
+  },
   unlimitedAttemptsSummary: {
     id: 'authoring.problemeditor.settings.scoring.unlimited',
     defaultMessage: 'Unlimited attempts',
@@ -104,18 +114,23 @@ const messages = defineMessages({
   },
   scoringSettingsLabel: {
     id: 'authoring.problemeditor.settings.scoring.label',
-    defaultMessage: 'Specify point weight and the number of answer attempts',
+    defaultMessage: 'Specify grading strategy, point weight and the number of answer attempts',
     description: 'Descriptive text for scoring settings',
   },
   attemptsHint: {
     id: 'authoring.problemeditor.settings.scoring.attempts.hint',
-    defaultMessage: 'If a value is not set, unlimited attempts are allowed',
+    defaultMessage: 'If a default value is not set in advanced settings, unlimited attempts are allowed',
     description: 'Summary text for scoring weight',
   },
   weightHint: {
     id: 'authoring.problemeditor.settings.scoring.weight.hint',
     defaultMessage: 'If a value is not set, the problem is worth one point',
     description: 'Summary text for scoring weight',
+  },
+  gradingStrategyHint: {
+    id: 'authoring.problemeditor.settings.scoring.gradingStrategy.hint',
+    defaultMessage: 'Define the grading strategy for this problem. By default the last attempt made by the student is taken.',
+    description: 'Summary text for scoring grading strategy',
   },
   showAnswerSettingsTitle: {
     id: 'authoring.problemeditor.settings.showAnswer.title',

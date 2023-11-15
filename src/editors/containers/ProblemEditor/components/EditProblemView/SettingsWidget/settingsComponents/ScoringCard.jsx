@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash-es';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FormattedMessage, injectIntl, intlShape } from '@edx/frontend-platform/i18n';
@@ -7,6 +8,7 @@ import { selectors } from '../../../../../../data/redux';
 import SettingsOption from '../SettingsOption';
 import messages from '../messages';
 import { scoringCardHooks } from '../hooks';
+import { GradingStrategy, GradingStrategyKeys } from '../../../../../../data/constants/problem';
 
 export const ScoringCard = ({
   scoring,
@@ -23,28 +25,57 @@ export const ScoringCard = ({
     handleUnlimitedChange,
     handleMaxAttemptChange,
     handleWeightChange,
+    handleGradingStrategyChange,
     handleOnChange,
     attemptDisplayValue,
   } = scoringCardHooks(scoring, updateSettings, defaultValue);
 
-  const getScoringSummary = (weight, attempts, unlimited) => {
+  const getScoringSummary = (weight, attempts, unlimited, gradingStrategy) => {
     let summary = intl.formatMessage(messages.weightSummary, { weight });
     summary += ` ${String.fromCharCode(183)} `;
     summary += unlimited
       ? intl.formatMessage(messages.unlimitedAttemptsSummary)
-      : intl.formatMessage(messages.attemptsSummary, { attempts });
+      : intl.formatMessage(messages.attemptsSummary, { attempts: attempts || defaultValue });
+    summary += ` ${String.fromCharCode(183)} `;
+    summary += intl.formatMessage(messages.gradingStrategySummary, { gradingStrategy: intl.formatMessage(GradingStrategy[gradingStrategy]) });
     return summary;
   };
 
   return (
     <SettingsOption
       title={intl.formatMessage(messages.scoringSettingsTitle)}
-      summary={getScoringSummary(scoring.weight, scoring.attempts.number, scoring.attempts.unlimited)}
+      summary={getScoringSummary(scoring.weight, scoring.attempts.number, scoring.attempts.unlimited, scoring.gradingStrategy)}
       className="scoringCard"
     >
       <div className="mb-4">
         <FormattedMessage {...messages.scoringSettingsLabel} />
       </div>
+      <Form.Group>
+        <Form.Control
+          as="select"
+          value={scoring.gradingStrategy}
+          onChange={handleGradingStrategyChange}
+          floatingLabel={intl.formatMessage(messages.scoringGradingStrategyInputLabel)}
+        >
+          {Object.values(GradingStrategyKeys).map((gradingStrategy) => {
+            let optionDisplayName = GradingStrategy[gradingStrategy];
+            if (gradingStrategy === defaultValue) {
+              optionDisplayName = { ...optionDisplayName, defaultMessage: `${optionDisplayName.defaultMessage} (Default)` };
+            }
+            return (
+              <option
+                key={gradingStrategy}
+                value={gradingStrategy}
+              >
+                {intl.formatMessage(optionDisplayName)}
+              </option>
+            );
+          })}
+        </Form.Control>
+        <Form.Control.Feedback>
+          <FormattedMessage {...messages.gradingStrategyHint} />
+        </Form.Control.Feedback>
+      </Form.Group>
       <Form.Group>
         <Form.Control
           type="number"
@@ -71,6 +102,7 @@ export const ScoringCard = ({
           className="mt-3 decoration-control-label"
           checked={scoring.attempts.unlimited}
           onChange={handleUnlimitedChange}
+          disabled={!_.isNil(defaultValue)}
         >
           <div className="x-small">
             <FormattedMessage {...messages.unlimitedAttemptsCheckboxLabel} />

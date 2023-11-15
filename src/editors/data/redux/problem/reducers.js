@@ -2,7 +2,7 @@ import _ from 'lodash-es';
 import { createSlice } from '@reduxjs/toolkit';
 import { indexToLetterMap } from '../../../containers/ProblemEditor/data/OLXParser';
 import { StrictDict } from '../../../utils';
-import { ProblemTypeKeys, RichTextProblems, ShowAnswerTypesKeys } from '../../constants/problem';
+import { GradingStrategyKeys, ProblemTypeKeys, RichTextProblems, ShowAnswerTypesKeys } from '../../constants/problem';
 import { ToleranceTypes } from '../../../containers/ProblemEditor/components/EditProblemView/SettingsWidget/settingsComponents/Tolerance/constants';
 
 const nextAlphaId = (lastId) => String.fromCharCode(lastId.charCodeAt(0) + 1);
@@ -21,9 +21,10 @@ const initialState = {
     scoring: {
       weight: 1,
       attempts: {
-        unlimited: true,
-        number: '',
+        unlimited: false,
+        number: null,
       },
+      gradingStrategy: GradingStrategyKeys.LAST_ATTEMPT,
     },
     hints: [],
     timeBetween: 0,
@@ -210,9 +211,6 @@ const problem = createSlice({
     setEnableTypeSelection: (state, { payload }) => {
       const { maxAttempts, showanswer, showResetButton } = payload;
       const attempts = { number: maxAttempts, unlimited: false };
-      if (!maxAttempts) {
-        attempts.unlimited = true;
-      }
       return {
         ...state,
         settings: {
