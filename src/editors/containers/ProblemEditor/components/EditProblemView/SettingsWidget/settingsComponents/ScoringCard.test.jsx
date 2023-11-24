@@ -15,6 +15,7 @@ describe('ScoringCard', () => {
       unlimited: false,
       number: 5,
     },
+    gradingStrategy: 'last_attempt',
     updateSettings: jest.fn().mockName('args.updateSettings'),
     intl: { formatMessage },
   };
@@ -29,6 +30,7 @@ describe('ScoringCard', () => {
     handleMaxAttemptChange: jest.fn().mockName('scoringCardHooks.handleMaxAttemptChange'),
     handleWeightChange: jest.fn().mockName('scoringCardHooks.handleWeightChange'),
     handleOnChange: jest.fn().mockName('scoringCardHooks.handleOnChange'),
+    handleGradingStrategyChange: jest.fn().mockName('scoringCardHooks.handleGradingStrategyChange'),
     local: 5,
   };
 
