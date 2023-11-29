@@ -21,13 +21,13 @@ import 'tinymce/plugins/image';
 import 'tinymce/plugins/imagetools';
 import 'tinymce/plugins/quickbars';
 import 'tinymce/plugins/preview';
-import './embedIframePlugin';
 
 import store from '../../data/store';
 import { selectors } from '../../data/redux';
 import ImageUploadModal from '../ImageUploadModal';
 import SourceCodeModal from '../SourceCodeModal';
 import * as hooks from './hooks';
+import './customTinyMcePlugins/embedIframePlugin';
 
 const editorConfigDefaultProps = {
   setEditorRef: undefined,
