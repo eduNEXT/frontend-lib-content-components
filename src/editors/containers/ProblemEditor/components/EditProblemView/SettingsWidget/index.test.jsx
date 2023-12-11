@@ -28,7 +28,7 @@ describe('SettingsWidget', () => {
       maxAttempts: 2,
       showanswer: 'finished',
       showResetButton: false,
-      gradingStrategy: 'last_attempt',
+      gradingStrategy: 'last_score',
     },
   };
 

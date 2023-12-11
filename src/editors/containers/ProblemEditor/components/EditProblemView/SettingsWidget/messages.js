@@ -129,7 +129,7 @@ const messages = defineMessages({
   },
   gradingStrategyHint: {
     id: 'authoring.problemeditor.settings.scoring.gradingStrategy.hint',
-    defaultMessage: 'Define the grading strategy for this problem. By default the last attempt made by the student is taken.',
+    defaultMessage: 'Define the grading strategy for this problem. By default the last score made by the student is taken.',
     description: 'Summary text for scoring grading strategy',
   },
   showAnswerSettingsTitle: {

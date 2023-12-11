@@ -24,7 +24,7 @@ const initialState = {
         unlimited: false,
         number: null,
       },
-      gradingStrategy: GradingStrategyKeys.LAST_ATTEMPT,
+      gradingStrategy: GradingStrategyKeys.LAST_SCORE,
     },
     hints: [],
     timeBetween: 0,

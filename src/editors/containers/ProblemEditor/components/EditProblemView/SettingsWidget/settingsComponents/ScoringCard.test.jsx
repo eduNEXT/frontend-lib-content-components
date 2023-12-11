@@ -15,7 +15,7 @@ describe('ScoringCard', () => {
       unlimited: false,
       number: 5,
     },
-    gradingStrategy: 'last_attempt',
+    gradingStrategy: 'last_score',
     updateSettings: jest.fn().mockName('args.updateSettings'),
     intl: { formatMessage },
   };

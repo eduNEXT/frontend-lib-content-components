@@ -217,28 +217,28 @@ export const RandomizationTypes = StrictDict({
 });
 
 export const GradingStrategyKeys = StrictDict({
-  LAST_ATTEMPT: 'last_attempt',
-  HIGHEST_GRADE: 'highest_attempt',
-  AVERAGE_GRADE: 'average_attempt',
-  FIRST_ATTEMPT: 'first_attempt',
+  LAST_SCORE: 'last_score',
+  HIGHEST_SCORE: 'highest_score',
+  AVERAGE_SCORE: 'average_score',
+  FIRST_SCORE: 'first_score',
 });
 
 export const GradingStrategy = StrictDict({
-  [GradingStrategyKeys.LAST_ATTEMPT]: {
-    id: 'authoring.problemeditor.settings.gradingstrategy.last_attempt',
-    defaultMessage: 'Last Attempt',
+  [GradingStrategyKeys.LAST_SCORE]: {
+    id: 'authoring.problemeditor.settings.gradingstrategy.last_score',
+    defaultMessage: 'Last Score',
   },
-  [GradingStrategyKeys.HIGHEST_GRADE]: {
-    id: 'authoring.problemeditor.settings.gradingstrategy.highest_grade',
-    defaultMessage: 'Highest Attempt',
+  [GradingStrategyKeys.HIGHEST_SCORE]: {
+    id: 'authoring.problemeditor.settings.gradingstrategy.highest_score',
+    defaultMessage: 'Highest Score',
   },
-  [GradingStrategyKeys.AVERAGE_GRADE]: {
-    id: 'authoring.problemeditor.settings.gradingstrategy.average_grade',
-    defaultMessage: 'Average Attempt',
+  [GradingStrategyKeys.AVERAGE_SCORE]: {
+    id: 'authoring.problemeditor.settings.gradingstrategy.average_score',
+    defaultMessage: 'Average Score',
   },
-  [GradingStrategyKeys.FIRST_ATTEMPT]: {
-    id: 'authoring.problemeditor.settings.gradingstrategy.first_attempt',
-    defaultMessage: 'First Attempt',
+  [GradingStrategyKeys.FIRST_SCORE]: {
+    id: 'authoring.problemeditor.settings.gradingstrategy.first_score',
+    defaultMessage: 'First Score',
   },
 });
 
