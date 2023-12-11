@@ -37,14 +37,23 @@ export const ScoringCard = ({
       ? intl.formatMessage(messages.unlimitedAttemptsSummary)
       : intl.formatMessage(messages.attemptsSummary, { attempts: attempts || defaultValue });
     summary += ` ${String.fromCharCode(183)} `;
-    summary += intl.formatMessage(messages.gradingStrategySummary, { gradingStrategy: intl.formatMessage(GradingStrategy[gradingStrategy]) });
+    summary += intl.formatMessage(messages.gradingStrategySummary, {
+      gradingStrategy: intl.formatMessage(GradingStrategy[gradingStrategy]),
+    });
     return summary;
   };
 
   return (
     <SettingsOption
       title={intl.formatMessage(messages.scoringSettingsTitle)}
-      summary={getScoringSummary(scoring.weight, scoring.attempts.number, scoring.attempts.unlimited, scoring.gradingStrategy)}
+      summary={
+        getScoringSummary(
+          scoring.weight,
+          scoring.attempts.number,
+          scoring.attempts.unlimited,
+          scoring.gradingStrategy,
+        )
+      }
       className="scoringCard"
     >
       <div className="mb-4">
