@@ -67,10 +67,7 @@ export const ScoringCard = ({
           floatingLabel={intl.formatMessage(messages.scoringGradingStrategyInputLabel)}
         >
           {Object.values(GradingStrategyKeys).map((gradingStrategy) => {
-            let optionDisplayName = GradingStrategy[gradingStrategy];
-            if (gradingStrategy === defaultValue) {
-              optionDisplayName = { ...optionDisplayName, defaultMessage: `${optionDisplayName.defaultMessage} (Default)` };
-            }
+            const optionDisplayName = GradingStrategy[gradingStrategy];
             return (
               <option
                 key={gradingStrategy}
