@@ -171,7 +171,7 @@ SettingsWidget.propTypes = {
     showanswer: PropTypes.string,
     showResetButton: PropTypes.bool,
     rerandomize: PropTypes.string,
-    gradingStrategy: PropTypes.string,
+    gradingMethod: PropTypes.string,
   }).isRequired,
   // eslint-disable-next-line
   settings: PropTypes.any.isRequired,

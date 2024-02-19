@@ -146,7 +146,7 @@ describe('Problem settings hooks', () => {
         unlimited: false,
         number: 5,
       },
-      gradingStrategy: 'last_score',
+      gradingMethod: 'last_score',
     };
     const defaultValue = 1;
     test('test scoringCardHooks initializes display value when attempts.number is null', () => {
@@ -269,10 +269,10 @@ describe('Problem settings hooks', () => {
       output.handleWeightChange({ target: { value } });
       expect(updateSettings).toHaveBeenCalledWith({ scoring: { ...scoring, weight: parseFloat(value) } });
     });
-    test('test handleGradingStrategyChange', () => {
+    test('test handleGradingMethodChange', () => {
       const value = 'first_score';
-      output.handleGradingStrategyChange({ target: { value } });
-      expect(updateSettings).toHaveBeenCalledWith({ scoring: { ...scoring, gradingStrategy: value } });
+      output.handleGradingMethodChange({ target: { value } });
+      expect(updateSettings).toHaveBeenCalledWith({ scoring: { ...scoring, gradingMethod: value } });
     });
   });
 

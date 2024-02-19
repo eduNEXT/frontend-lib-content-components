@@ -12,7 +12,7 @@ exports[`ScoringCard snapshot snapshot: scoring setting card 1`] = `
     className="mb-4"
   >
     <FormattedMessage
-      defaultMessage="Specify grading strategy, point weight and the number of answer attempts"
+      defaultMessage="Specify grading method, point weight and the number of answer attempts"
       description="Descriptive text for scoring settings"
       id="authoring.problemeditor.settings.scoring.label"
     />
@@ -20,8 +20,8 @@ exports[`ScoringCard snapshot snapshot: scoring setting card 1`] = `
   <Form.Group>
     <Form.Control
       as="select"
-      floatingLabel="Grading Strategy"
-      onChange={[MockFunction scoringCardHooks.handleGradingStrategyChange]}
+      floatingLabel="Grading Method"
+      onChange={[MockFunction scoringCardHooks.handleGradingMethodChange]}
       value="last_score"
     >
       <option
@@ -51,9 +51,9 @@ exports[`ScoringCard snapshot snapshot: scoring setting card 1`] = `
     </Form.Control>
     <Form.Control.Feedback>
       <FormattedMessage
-        defaultMessage="Define the grading strategy for this problem. By default, it is the score of the last submission made by the student."
-        description="Summary text for scoring grading strategy"
-        id="authoring.problemeditor.settings.scoring.gradingStrategy.hint"
+        defaultMessage="Define the grading method for this problem. By default, it is the score of the last submission made by the student."
+        description="Summary text for scoring grading method"
+        id="authoring.problemeditor.settings.scoring.gradingMethod.hint"
       />
     </Form.Control.Feedback>
   </Form.Group>
@@ -127,7 +127,7 @@ exports[`ScoringCard snapshot snapshot: scoring setting card max attempts 1`] = 
     className="mb-4"
   >
     <FormattedMessage
-      defaultMessage="Specify grading strategy, point weight and the number of answer attempts"
+      defaultMessage="Specify grading method, point weight and the number of answer attempts"
       description="Descriptive text for scoring settings"
       id="authoring.problemeditor.settings.scoring.label"
     />
@@ -135,8 +135,8 @@ exports[`ScoringCard snapshot snapshot: scoring setting card max attempts 1`] = 
   <Form.Group>
     <Form.Control
       as="select"
-      floatingLabel="Grading Strategy"
-      onChange={[MockFunction scoringCardHooks.handleGradingStrategyChange]}
+      floatingLabel="Grading Method"
+      onChange={[MockFunction scoringCardHooks.handleGradingMethodChange]}
       value="last_score"
     >
       <option
@@ -166,9 +166,9 @@ exports[`ScoringCard snapshot snapshot: scoring setting card max attempts 1`] = 
     </Form.Control>
     <Form.Control.Feedback>
       <FormattedMessage
-        defaultMessage="Define the grading strategy for this problem. By default, it is the score of the last submission made by the student."
-        description="Summary text for scoring grading strategy"
-        id="authoring.problemeditor.settings.scoring.gradingStrategy.hint"
+        defaultMessage="Define the grading method for this problem. By default, it is the score of the last submission made by the student."
+        description="Summary text for scoring grading method"
+        id="authoring.problemeditor.settings.scoring.gradingMethod.hint"
       />
     </Form.Control.Feedback>
   </Form.Group>
@@ -242,7 +242,7 @@ exports[`ScoringCard snapshot snapshot: scoring setting card zero zero weight 1`
     className="mb-4"
   >
     <FormattedMessage
-      defaultMessage="Specify grading strategy, point weight and the number of answer attempts"
+      defaultMessage="Specify grading method, point weight and the number of answer attempts"
       description="Descriptive text for scoring settings"
       id="authoring.problemeditor.settings.scoring.label"
     />
@@ -250,8 +250,8 @@ exports[`ScoringCard snapshot snapshot: scoring setting card zero zero weight 1`
   <Form.Group>
     <Form.Control
       as="select"
-      floatingLabel="Grading Strategy"
-      onChange={[MockFunction scoringCardHooks.handleGradingStrategyChange]}
+      floatingLabel="Grading Method"
+      onChange={[MockFunction scoringCardHooks.handleGradingMethodChange]}
       value="last_score"
     >
       <option
@@ -281,9 +281,9 @@ exports[`ScoringCard snapshot snapshot: scoring setting card zero zero weight 1`
     </Form.Control>
     <Form.Control.Feedback>
       <FormattedMessage
-        defaultMessage="Define the grading strategy for this problem. By default, it is the score of the last submission made by the student."
-        description="Summary text for scoring grading strategy"
-        id="authoring.problemeditor.settings.scoring.gradingStrategy.hint"
+        defaultMessage="Define the grading method for this problem. By default, it is the score of the last submission made by the student."
+        description="Summary text for scoring grading method"
+        id="authoring.problemeditor.settings.scoring.gradingMethod.hint"
       />
     </Form.Control.Feedback>
   </Form.Group>

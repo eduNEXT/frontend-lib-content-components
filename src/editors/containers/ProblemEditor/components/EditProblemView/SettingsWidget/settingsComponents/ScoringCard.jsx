@@ -8,7 +8,7 @@ import { selectors } from '../../../../../../data/redux';
 import SettingsOption from '../SettingsOption';
 import messages from '../messages';
 import { scoringCardHooks } from '../hooks';
-import { GradingStrategy, GradingStrategyKeys } from '../../../../../../data/constants/problem';
+import { GradingMethod, GradingMethodKeys } from '../../../../../../data/constants/problem';
 
 export const ScoringCard = ({
   scoring,
@@ -25,20 +25,20 @@ export const ScoringCard = ({
     handleUnlimitedChange,
     handleMaxAttemptChange,
     handleWeightChange,
-    handleGradingStrategyChange,
+    handleGradingMethodChange,
     handleOnChange,
     attemptDisplayValue,
   } = scoringCardHooks(scoring, updateSettings, defaultValue);
 
-  const getScoringSummary = (weight, attempts, unlimited, gradingStrategy) => {
+  const getScoringSummary = (weight, attempts, unlimited, gradingMethod) => {
     let summary = intl.formatMessage(messages.weightSummary, { weight });
     summary += ` ${String.fromCharCode(183)} `;
     summary += unlimited
       ? intl.formatMessage(messages.unlimitedAttemptsSummary)
       : intl.formatMessage(messages.attemptsSummary, { attempts: attempts || defaultValue });
     summary += ` ${String.fromCharCode(183)} `;
-    summary += intl.formatMessage(messages.gradingStrategySummary, {
-      gradingStrategy: intl.formatMessage(GradingStrategy[gradingStrategy]),
+    summary += intl.formatMessage(messages.gradingMethodSummary, {
+      gradingMethod: intl.formatMessage(GradingMethod[gradingMethod]),
     });
     return summary;
   };
@@ -51,7 +51,7 @@ export const ScoringCard = ({
           scoring.weight,
           scoring.attempts.number,
           scoring.attempts.unlimited,
-          scoring.gradingStrategy,
+          scoring.gradingMethod,
         )
       }
       className="scoringCard"
@@ -62,16 +62,16 @@ export const ScoringCard = ({
       <Form.Group>
         <Form.Control
           as="select"
-          value={scoring.gradingStrategy}
-          onChange={handleGradingStrategyChange}
-          floatingLabel={intl.formatMessage(messages.scoringGradingStrategyInputLabel)}
+          value={scoring.gradingMethod}
+          onChange={handleGradingMethodChange}
+          floatingLabel={intl.formatMessage(messages.scoringGradingMethodInputLabel)}
         >
-          {Object.values(GradingStrategyKeys).map((gradingStrategy) => {
-            const optionDisplayName = GradingStrategy[gradingStrategy];
+          {Object.values(GradingMethodKeys).map((gradingMethod) => {
+            const optionDisplayName = GradingMethod[gradingMethod];
             return (
               <option
-                key={gradingStrategy}
-                value={gradingStrategy}
+                key={gradingMethod}
+                value={gradingMethod}
               >
                 {intl.formatMessage(optionDisplayName)}
               </option>
@@ -79,7 +79,7 @@ export const ScoringCard = ({
           })}
         </Form.Control>
         <Form.Control.Feedback>
-          <FormattedMessage {...messages.gradingStrategyHint} />
+          <FormattedMessage {...messages.gradingMethodHint} />
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group>

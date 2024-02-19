@@ -82,15 +82,15 @@ const messages = defineMessages({
     defaultMessage: 'Points',
     description: 'Scoring weight input label',
   },
-  scoringGradingStrategyInputLabel: {
-    id: 'authoring.problemeditor.settings.scoring.gradingStrategy.inputLabel',
-    defaultMessage: 'Grading Strategy',
-    description: 'Grading strategy input label',
+  scoringGradingMethodInputLabel: {
+    id: 'authoring.problemeditor.settings.scoring.gradingMethod.inputLabel',
+    defaultMessage: 'Grading Method',
+    description: 'Grading method input label',
   },
-  gradingStrategySummary: {
-    id: 'authoring.problemeditor.settings.scoring.gradingStrategy',
-    defaultMessage: '{gradingStrategy}',
-    description: 'Summary text for scoring grading strategy',
+  gradingMethodSummary: {
+    id: 'authoring.problemeditor.settings.scoring.gradingMethod',
+    defaultMessage: '{gradingMethod}',
+    description: 'Summary text for scoring grading method',
   },
   unlimitedAttemptsSummary: {
     id: 'authoring.problemeditor.settings.scoring.unlimited',
@@ -114,7 +114,7 @@ const messages = defineMessages({
   },
   scoringSettingsLabel: {
     id: 'authoring.problemeditor.settings.scoring.label',
-    defaultMessage: 'Specify grading strategy, point weight and the number of answer attempts',
+    defaultMessage: 'Specify grading method, point weight and the number of answer attempts',
     description: 'Descriptive text for scoring settings',
   },
   attemptsHint: {
@@ -127,10 +127,10 @@ const messages = defineMessages({
     defaultMessage: 'If a value is not set, the problem is worth one point',
     description: 'Summary text for scoring weight',
   },
-  gradingStrategyHint: {
-    id: 'authoring.problemeditor.settings.scoring.gradingStrategy.hint',
-    defaultMessage: 'Define the grading strategy for this problem. By default, it is the score of the last submission made by the student.',
-    description: 'Summary text for scoring grading strategy',
+  gradingMethodHint: {
+    id: 'authoring.problemeditor.settings.scoring.gradingMethod.hint',
+    defaultMessage: 'Define the grading method for this problem. By default, it is the score of the last submission made by the student.',
+    description: 'Summary text for scoring grading method',
   },
   showAnswerSettingsTitle: {
     id: 'authoring.problemeditor.settings.showAnswer.title',

@@ -38,7 +38,7 @@ export const parseScoringSettings = (metadata, defaultSettings) => {
 
   scoring = popuplateItem(scoring, 'weight', 'weight', metadata);
 
-  scoring = popuplateItem(scoring, 'grading_strategy', 'gradingStrategy', metadata);
+  scoring = popuplateItem(scoring, 'grading_method', 'gradingMethod', metadata);
 
   return scoring;
 };
