@@ -1,6 +1,6 @@
 {
-  "name": "@edx/frontend-lib-content-components",
-  "version": "1.0.0-semantically-released",
+  "name": "@edunext/frontend-lib-content-components",
+  "version": "1.0.10-santander",
   "description": "A library of high-level components for content handling.",
   "main": "dist/index.js",
   "publishConfig": {
