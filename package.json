@@ -1,6 +1,6 @@
 {
   "name": "@edunext/frontend-lib-content-components",
-  "version": "1.0.10-santander",
+  "version": "1.0.11-san-sebastian",
   "description": "A library of high-level components for content handling.",
   "main": "dist/index.js",
   "publishConfig": {
